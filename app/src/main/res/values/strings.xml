@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Serj Recommend</string>
-    <string name="welcome">Welcome to Serj\'s Recommend!</string>
+    <string name="welcome">Serj Recommend</string>
+
     <string name="init_background">initBackground</string>
     <string name="initButton_enter">Enter to chill</string>
+
     <string name="feed_header">some chill things:</string>
 </resources>

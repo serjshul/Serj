@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_width="135dp"
+    android:layout_height="135dp"
     android:layout_gravity="center"
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp"
@@ -14,18 +14,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageViewMusic"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher" />
-
         <TextView
             android:id="@+id/textViewMusic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="120dp"
             android:text="@string/app_name"
+            android:textSize="11sp"
             android:textAlignment="center" />
     </LinearLayout>
 

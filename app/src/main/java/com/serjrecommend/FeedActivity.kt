@@ -4,26 +4,27 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.GridView
 import androidx.appcompat.app.AppCompatActivity
+import com.serjrecommend.music.MusicAdapter
 
-
+/**
+ *  FEED ACTIVITY
+ *
+ *  Activity contains a GridView containing clickable cards with Serj's music recommendations.
+ */
 class FeedActivity : AppCompatActivity() {
 
+    // GridView that contains clickable cards
     private lateinit var gridViewMusic: GridView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
+        // Initialize the GridView
         gridViewMusic = findViewById(R.id.gridViewMusic)
-
-        val musicModelArrayLists: ArrayList<MusicModel> = ArrayList()
-        musicModelArrayLists.add(MusicModel("Peggy Gou - Nanana", R.drawable.peggy_gou_nanana))
-        musicModelArrayLists.add(MusicModel("Beyonce - Heated", R.drawable.beyonce_heated))
-        musicModelArrayLists.add(MusicModel("Joji - Glimpse Of Us", R.drawable.joji_glimpse_of_us))
-
-        val adapter = MusicAdapter(this, musicModelArrayLists)
-        gridViewMusic.adapter = adapter
-
+        // Set the custom adapter for the music
+        gridViewMusic.adapter = MusicAdapter(this)
+        // Set an opening the Full Music Activity on ItemClick
         gridViewMusic.setOnItemClickListener { adapterView, view, position, id ->
             // Sending image id to FullScreenActivity
             val intent = Intent(this, FullMusicActivity::class.java)
