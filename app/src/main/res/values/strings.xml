@@ -6,4 +6,9 @@
     <string name="initButton_enter">Enter to chill</string>
 
     <string name="feed_header">some chill things:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="place_name">Name of the place</string>
+    <string name="place_cover">cover</string>
+    <string name="place_description">description</string>
 </resources>

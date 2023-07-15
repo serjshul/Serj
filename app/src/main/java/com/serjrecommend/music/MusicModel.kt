@@ -1,29 +1,29 @@
 package com.serjrecommend.music
 
-class MusicModel(private var MusicName: String, private var MusicCoverId: Int,
-                 private var MusicColor: String, private var MusicVideoId: Int) {
+class MusicModel(private var name: String, private var coverId: Int,
+                 private var color: String, private var videoId: Int) {
 
-    fun getName(): String = MusicName
+    fun getName(): String = name
 
-    fun setName(newMusicName: String) {
-        this.MusicName = newMusicName
+    fun setName(newName: String) {
+        this.name = newName
     }
 
-    fun getImageId(): Int = MusicCoverId
+    fun getImageId(): Int = coverId
 
-    fun setImageId(newMusicCoverId: Int) {
-        this.MusicCoverId = newMusicCoverId
+    fun setImageId(newCoverId: Int) {
+        this.coverId = newCoverId
     }
 
-    fun getColor(): String = MusicColor
+    fun getColor(): String = color
 
-    fun setColor(newMusicColor: String) {
-        this.MusicColor = newMusicColor
+    fun setColor(newColor: String) {
+        this.color = newColor
     }
 
-    fun getVideoId(): Int = MusicVideoId
+    fun getVideoId(): Int = videoId
 
-    fun setVideo(newMusicVideoId: Int) {
-        this.MusicVideoId = newMusicVideoId
+    fun setVideo(newVideoId: Int) {
+        this.videoId = newVideoId
     }
 }
