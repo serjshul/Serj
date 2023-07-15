@@ -2,9 +2,12 @@ package com.serjrecommend
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.DisplayMetrics
+import android.widget.LinearLayout
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.serjrecommend.music.MusicAdapter
+
 
 /**
  *  FULL MUSIC ACTIVITY

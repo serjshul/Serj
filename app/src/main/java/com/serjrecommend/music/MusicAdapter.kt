@@ -43,7 +43,7 @@ class MusicAdapter(private val context: Context) : BaseAdapter() {
 		return itemView
 	}
 
-	// References to music data
+	// References to the music data
 	var thumbIds = arrayOf(
 		MusicModel("Peggy Gou - Nanana",
 			R.drawable.cover_peggy_gou_nanana,
