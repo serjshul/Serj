@@ -1,40 +1,140 @@
 package com.serjrecommend
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import com.serjrecommend.places.PlacesAdapter
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.serjrecommend.data.places.PlacesAdapter
+import com.serjrecommend.data.places.PlacesData
+import com.serjrecommend.data.places.PlacesModel
 
 private const val ARG_OBJECT = "Places"
+
 
 /**
  * PLACES FRAGMENT
  *
- * It contains a GridView with clickable cards (Serj's places recommendations).
+ * The fragment contains a header, a line with types and tags, and a RecyclerView with cards that
+ * contain places content.
  *
- * The fragment uses the fragment_places.xml layout. When moving to the next activity
- * (FullPlacesActivity) sends an ID by putExtra() in Intent.
+ * The cards contain:
+ * - title
+ * - type
+ * - cover
+ * - short description
+ *
+ * All cards in the RecyclerView are clickable. When the user click on a card, there are transition
+ * to `FullPlacesActivity`.
  */
 class PlacesFragment : Fragment() {
 
-    // ListView that contains clickable cards
-    lateinit var list : ListView
+    // Places data
+    private lateinit var data: ArrayList<PlacesModel>
+
+    // A RecyclerView that contains clickable cards
+    private lateinit var cards : RecyclerView
+
+    // Some cards views
+    private lateinit var types: ArrayList<TextView>
+    private lateinit var tags: ArrayList<TextView>
+
+    // Layout where we add tags
+    private lateinit var tagsLayout: LinearLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_media, container, false)
+        return inflater.inflate(R.layout.places_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         arguments?.takeIf { it.containsKey(ARG_OBJECT) }?.apply {
-            // Initialize the ListView
-            list = view.findViewById(R.id.list)
-            // Set the custom adapter for the music
-            list.adapter = PlacesAdapter(view.context)
+            // Initializing of some things
+            types = arrayListOf()
+            tags = arrayListOf()
+            tagsLayout = view.findViewById(R.id.tags_layout)
+
+            // Setting the RecyclerView
+            cards = view.findViewById(R.id.cards)
+            // Create a vertical Linear Layout Manager
+            cards.layoutManager = LinearLayoutManager(view.context)
+
+            // Setting the media data
+            data = PlacesData.getPlacesData()
+            val adapter = PlacesAdapter(data)
+            cards.adapter = adapter
+
+            // Set setOnClickListener on cards view
+            adapter.setOnClickListener(object : PlacesAdapter.OnClickListener {
+                override fun onClick(position: Int, model: PlacesModel) {
+                    val intent = Intent(view.context, FullPlacesActivity::class.java)
+                    // Passing the data to the EmployeeDetails Activity
+                    intent.putExtra("data", model)
+                    startActivity(intent)
+                }
+            })
+
+            // Adding types and tags
+            storeTags(types, true)
+            storeTags(tags, false)
+        }
+    }
+
+    // Creates new tagView with a text and defined left margin
+    private fun setNewTag(tagType: Int, leftMargin: Int, text: String): TextView {
+        // Creating new view of the tag
+        val tagView: View = LayoutInflater.from(requireView().context).inflate(tagType, null)
+
+        // Defining tag's TextView and setting the text
+        val tag = tagView.findViewById<TextView>(R.id.tag)
+        tag.text = text
+        // Setting margins to the tag by MarginLayoutParams
+        val params = tag.layoutParams as ViewGroup.MarginLayoutParams
+        params.setMargins(leftMargin, 0, 0, 0)
+        tag.layoutParams = params
+
+        // Setting tag to tags_layout
+        tagsLayout.addView(tagView)
+
+        return tag
+    }
+
+    // Getting all tags and types from data and setting it to tags_layout
+    private fun storeTags(views: ArrayList<TextView>, isType: Boolean) {
+        // Array of unique tag's names
+        val tags = arrayListOf<String>()
+
+        // Store names from the data
+        for (item in data) {
+            if (isType) {
+                if (!tags.contains(item.location)) {
+                    tags.add(item.location)
+                }
+            } else {
+                for (tag in item.types) {
+                    if (!tags.contains(tag)) {
+                        tags.add(tag)
+                    }
+                }
+            }
+        }
+
+        // Sorting names
+        tags.sort()
+
+        // Setting tags to tags_layout
+        for (tag in tags) {
+            if (isType) {
+                views.add(setNewTag(R.layout.tag_white, 30, tag))
+            } else {
+                views.add(setNewTag(R.layout.tag_transparent, 30, tag))
+            }
         }
     }
 }
