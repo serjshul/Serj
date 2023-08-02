@@ -5,25 +5,36 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.serjrecommend.adapters.TabAdapter
+
 
 /**
  *  FEED ACTIVITY
  *
- *  Activity contains a GridView containing clickable cards with Serj's music recommendations.
+ *  This activity contains the presentation of all content in the form of clickable cards, which
+ *  provide basic information about some recommendation. Cards are divided into 3 types (such as
+ *  all content): music, media and places.
+ *
+ *  Separation of cards from different categories is implemented by TabLayout and ViewPager2.
+ *  The desired fragment (MusicFragment, MediaFragment or PlacesFragment) displays on ViewPager2
+ *  by selecting the TabLayout position. All fragments contain all the information about its
+ *  content category.
  */
 class FeedActivity : AppCompatActivity() {
 
-    // adapter is a custom FragmentPagerAdapter
+    // Custom FragmentStateAdapter
     private lateinit var adapter: TabAdapter
-    // viewPager is a layout manager that allows the user to flip left and right through pages of data
+    // Layout manager that allows the user to flip left and right through fragments
     private lateinit var viewPager: ViewPager2
-    // tabLayout allows to move to the pages
+    // The layout Provides a horizontal layout to display tabs
     private lateinit var tabLayout: TabLayout
-    // Names of tabs that displayed on the top panel
-    private val tabNames: Array<String> = arrayOf(
-        "Music",
-        "Media",
-        "Places"
+
+    // Names and icons of tabs that displayed on the panel
+    private val tabNames: Array<String> = arrayOf("Music", "Media", "Places")
+    private val tabIcons: Array<Int> = arrayOf(
+        R.drawable.baseline_library_music_24,
+        R.drawable.baseline_laptop_24,
+        R.drawable.baseline_map_24
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,14 +42,15 @@ class FeedActivity : AppCompatActivity() {
         setContentView(R.layout.activity_feed)
 
         // Initialization of viewPager and setting the TabAdapter
-        viewPager = findViewById(R.id.pager)
+        viewPager = findViewById(R.id.view_pager)
         adapter = TabAdapter(this)
         viewPager.adapter = adapter
 
-        // Initialization of tabLayout and setting the names
+        // Initialization of tabLayout and setting names and icons by using TabLayoutMediator
         tabLayout = findViewById(R.id.tab_layout)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabNames[position]
+            tab.setIcon(tabIcons[position])
         }.attach()
     }
 }

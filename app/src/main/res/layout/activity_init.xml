@@ -7,7 +7,7 @@
     tools:context=".InitActivity">
 
     <ImageView
-        android:id="@+id/background"
+        android:id="@+id/background_transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/init_background"
@@ -16,27 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/init_background" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="116dp"
-        android:contentDescription="@string/init_background"
-        android:src="@drawable/init_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/buttonEnter"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="224dp"
-        android:text="@string/initButton_enter"
+        android:layout_marginBottom="50dp"
+        android:text="@string/init_button_enter"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

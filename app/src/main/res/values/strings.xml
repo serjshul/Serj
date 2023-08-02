@@ -1,14 +1,70 @@
 <resources>
-    <string name="app_name">Serj Recommend</string>
-    <string name="welcome">Serj Recommend</string>
+    <string name="app_name">Serj</string>
 
-    <string name="init_background">initBackground</string>
-    <string name="initButton_enter">Enter to chill</string>
+    <!-- INITIAL ACTIVITY STRINGS -->
+    <string name="init_background">Initial Activity Background</string>
+    <string name="init_logo">Initial Activity Logo</string>
+    <string name="init_button_enter">Enter to chill</string>
 
-    <string name="feed_header">some chill things:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="place_name">Name of the place</string>
-    <string name="place_cover">cover</string>
-    <string name="place_description">description</string>
+    <!-- FEED ACTIVITY STRINGS -->
+    <string name="feed_tabs">Tabs: Music, Media and Places</string>
+    <!-- Music Item -->
+    <string name="item_music_title">Music title</string>
+    <string name="item_music_musician">Musician\'s name</string>
+    <string name="item_music_cover">Music cover</string>
+    <!-- Media Item -->
+    <string name="item_media_title">Media title</string>
+    <string name="item_media_type">Type</string>
+    <string name="item_media_cover">Media cover</string>
+    <string name="item_media_description">media description / media description \nmedia description / media description \nmedia description / media description \nmedia description / media description</string>
+    <!-- Places Item -->
+    <string name="item_place_title">Place title</string>
+    <string name="item_place_cover">Place Cover</string>
+    <string name="item_place_description">place description / place description \nplace description / place description \nplace description / place description \nplace description / place description</string>
+    <string name="item_places_location">Location</string>
+
+    <!-- FULL ACTIVITIES STRINGS -->
+    <!-- Full Music Activity -->
+    <string name="full_music_title">Music title</string>
+    <string name="full_music_musician">Musician\'s name</string>
+    <string name="full_music_cover">Music cover</string>
+    <string name="full_music_description">music description / music description \nmusic description / music description \n\nmusic description / music description \nmusic description / music description</string>
+    <string name="full_music_share_button">Share button</string>
+    <string name="full_music_back_button">Back button</string>
+    <string name="full_music_like_button">Like</string>
+    <string name="full_music_transparent_image">Transparent image</string>
+    <string name="full_music_tags">Tags</string>
+    <!-- Full Media Activity -->
+    <string name="full_media_back_button">Back button</string>
+    <string name="full_media_tags">Tags</string>
+    <string name="full_media_title">Media title</string>
+    <string name="full_media_cover">Media cover</string>
+    <string name="full_media_description">media description / media description \nmedia description / media description \nmedia description / media description \nmedia description / media description</string>
+    <!-- Full Places Activity -->
+    <string name="full_place_back_button">Back button</string>
+    <string name="full_place_title">Place title</string>
+    <string name="full_place_description">place description / place description \nplace description / place description</string>
+    <string name="full_places_tags">Tags</string>
+    <string name="full_places_address">Address</string>
+    <string name="full_places_metro">Metro</string>
+    <string name="full_places_social_media">Social media</string>
+
+    <!-- FRAGMENTS -->
+    <string name="fragment_music_header">Some music recommendations</string>
+    <string name="fragment_music_tags">Tags</string>
+    <string name="fragment_media_header">Some media recommendations</string>
+    <string name="fragment_media_tags">Tags</string>
+    <string name="fragment_places_header">Some places recommendations</string>
+    <string name="fragment_places_tags">Tags</string>
+
+    <!-- PARAGRAPHS -->
+    <string name="paragraph_media_title">Media paragraph</string>
+    <string name="paragraph_media_cover">Paragraph cover</string>
+    <string name="paragraph_media_text">media paragraph / media paragraph \nmedia paragraph / media paragraph \n\nmedia paragraph / media paragraph \nmedia paragraph / media paragraph\n</string>
+    <string name="paragraph_places_title">Places paragraph</string>
+    <string name="paragraph_places_text">places paragraph / places paragraph \nplaces paragraph / places paragraph \n\nplaces paragraph / places paragraph \nplaces paragraph / places paragraph\n</string>
+
+    <!-- OTHERS -->
+    <string name="carousel_item_image">Image of carousel</string>
+
 </resources>
