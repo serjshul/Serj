@@ -42,7 +42,7 @@ data class PlacesParagraphModel(var title: String, var text: String): java.io.Se
 object PlacesData {
 
     // Creates an Arraylist of media data and returns it
-    fun getPlacesData(): ArrayList<PlacesModel> {
+    fun getPlacesData(): ArrayList<Any> {
         // ArrayList of media recommendations
         val data = ArrayList<PlacesModel>()
 
@@ -50,20 +50,19 @@ object PlacesData {
         data.add(
             PlacesModel(
                 "Civil на Волынском",
-                arrayListOf("Coffee", "Bar"),
-                "Saint-Petersburg",
+                arrayListOf("Кофейня", "Бар"),
+                "Санкт-Петербург",
                 R.drawable.places_cover_civil,
                 "Цивил — это Петербургская сеть кофе-баров, в которых вкусно, уютно и приятно.",
                 arrayListOf(
                     R.drawable.places_gallery_civil_1,
                     R.drawable.places_gallery_civil_2,
                     R.drawable.places_gallery_civil_3,
-                    R.drawable.places_gallery_civil_4,
-                    R.drawable.places_gallery_civil_5
+                    R.drawable.places_gallery_civil_4
                 ),
                 "Волынский переулок, 6",
                 "Невский Проспект",
-                "@civil.coffeebar",
+                "civil.coffeebar",
                 arrayListOf(
                     PlacesParagraphModel(
                         "Soft Coffee Bar",
@@ -89,6 +88,6 @@ object PlacesData {
             )
         )
 
-        return  data
+        return data as ArrayList<Any>
     }
 }

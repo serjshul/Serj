@@ -8,7 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FE866C</color>
-    <color name="gray_music">#70000000</color> <!-- 99 is for alpha and others pairs zero's are for R G B -->
     <color name="gray_tabs">#99000000</color> <!-- 99 is for alpha and others pairs zero's are for R G B -->
     <color name="gray_border">#D6D6D6</color>
     <color name="gray_full_background">#5A5A5A</color>
@@ -16,5 +15,19 @@
     <color name="black_feed">#303030</color>
     <color name="black_data">#626262</color>
 
+    <!-- MY PALETTE -->
+    <color name="palette_white">#FFFFFF</color>
+    <color name="palette_gray1">#EDEBED</color>
+    <color name="palette_gray2">#D9D7DC</color>
+    <color name="palette_dark_beige">#BD826E</color>
+    <color name="palette_brown">#472F25</color>
+    <color name="palette_black">#000000</color>
+
     <color name="gray_tabs_text">#5A5A5A</color>
+    <color name="gray_music">#50000000</color> <!-- 99 is for alpha and others pairs zero's are for R G B -->
+    <color name="transparent">#00000000</color>
+
+    <color name="rating_red">#D1100D</color>
+    <color name="rating_green">#32CD32</color>
+    <color name="rating_yellow">#d4af37</color>
 </resources>

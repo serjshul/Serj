@@ -17,9 +17,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.serjrecommend.adapters.PlacesCarouselAdapter
+import com.serjrecommend.adapters.CarouselAdapter
 import com.serjrecommend.data.places.PlacesModel
 import com.serjrecommend.data.places.PlacesParagraphModel
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import java.io.Serializable
 
 
@@ -47,6 +48,7 @@ class FullPlacesActivity : AppCompatActivity() {
     private lateinit var description: TextView
     private lateinit var location: TextView
     private lateinit var carousel: ViewPager2
+    private lateinit var dotsIndicator: DotsIndicator
     private lateinit var address: TextView
     private lateinit var metro: TextView
     private lateinit var metroPicture: ImageView
@@ -63,7 +65,7 @@ class FullPlacesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.places_activity_full)
+        setContentView(R.layout.activity_full_places)
 
         // Getting the current Intent
         val intent = intent
@@ -96,16 +98,18 @@ class FullPlacesActivity : AppCompatActivity() {
             metro.text = data.metro
             socialMedia.text = data.socialMedia
             // Setting data to carousel via PlacesCarouselAdapter
-            carousel.adapter = PlacesCarouselAdapter(data.gallery)
+            carousel.adapter = CarouselAdapter(data.gallery)
             // Setting metroPicture depending on location
             when (data.location) {
+                "Санкт-Петербург" -> metroPicture.setImageResource(R.drawable.places_logo_metro_spb)
                 "Saint-Petersburg" -> metroPicture.setImageResource(R.drawable.places_logo_metro_spb)
+                "Москва" ->  metroPicture.setImageResource(R.drawable.places_logo_metro_moscow)
                 "Moscow" -> metroPicture.setImageResource(R.drawable.places_logo_metro_moscow)
                 else -> metroPicture.setImageResource(R.drawable.places_logo_metro_moscow)
             }
 
             // Adding type of the recommendation to a tags_layout
-            location = setNewTag(R.layout.tag_white, 65, data.location)
+            location = setNewTag(R.layout.tag_white, 35, data.location)
             // Adding tags of the recommendation to a tags_layout
             for (type in data.types) {
                 tags.add(setNewTag(R.layout.tag_transparent, 30, type))
@@ -116,6 +120,11 @@ class FullPlacesActivity : AppCompatActivity() {
             }
         }
 
+        // Setting the dotsIndicator
+        dotsIndicator = findViewById(R.id.banner_dots)
+        dotsIndicator.attachTo(carousel)
+
+        /*
         // Setting Page Transformer to the carousel
         val compositePageTransformer = CompositePageTransformer()
         // Distance between items
@@ -134,6 +143,8 @@ class FullPlacesActivity : AppCompatActivity() {
             (getChildAt(0) as RecyclerView).overScrollMode = RecyclerView.OVER_SCROLL_NEVER // Remove the scroll effect
             setPageTransformer(compositePageTransformer) // Setting Page Transformer to the carousel
         }
+
+         */
     }
 
     // Creates new tagView with a text and defined left margin
@@ -158,7 +169,7 @@ class FullPlacesActivity : AppCompatActivity() {
     // Creates new paragraph and adds to the main_layout
     private fun setNewParagraph(paragraph: PlacesParagraphModel) {
         // Creating new view of the paragraph
-        val paragraphView: View = LayoutInflater.from(this).inflate(R.layout.places_paragraph, null)
+        val paragraphView: View = LayoutInflater.from(this).inflate(R.layout.paragraph_without_image, null)
 
         // Defining paragraph's TextView and setting the text
         val paragraphTitle = paragraphView.findViewById<TextView>(R.id.title)

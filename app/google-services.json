@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "873082610210",
+    "firebase_url": "https://serj-1106a-default-rtdb.firebaseio.com",
+    "project_id": "serj-1106a",
+    "storage_bucket": "serj-1106a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873082610210:android:ce0c11c5f662a74a66e07b",
+        "android_client_info": {
+          "package_name": "com.serjrecommend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873082610210-f4q36ten3rjp55mls63cvrt9tmusu9ll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.serjrecommend",
+            "certificate_hash": "f05ce1bd96f87dd23418dc0f942549d037496891"
+          }
+        },
+        {
+          "client_id": "873082610210-87m7ve0upla7p4hk7uctjs598sjm6eso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0vgFPaI6RfLK6-adhGateDUntkPaJ38Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873082610210-87m7ve0upla7p4hk7uctjs598sjm6eso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

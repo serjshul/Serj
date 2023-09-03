@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/baseline_search_24"
+        android:title="@string/menu_search"  />
+
+    <item
+        android:id="@+id/main"
+        android:enabled="true"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/menu_main" />
+
+    <item
+        android:id="@+id/favourites"
+        android:enabled="true"
+        android:icon="@drawable/heart_black"
+        android:title="@string/menu_favourites" />
+
+</menu>

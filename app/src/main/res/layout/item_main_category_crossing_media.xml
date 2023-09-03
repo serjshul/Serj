@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="450dp" >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_cover"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/wide_category_netflix_and_chill"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-28dp"
+        android:layout_marginStart="10dp"
+        android:text="Категория"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/palette_white"
+        app:layout_constraintTop_toTopOf="@id/card_cover"
+        app:layout_constraintStart_toStartOf="@id/card_cover" />
+
+    <HorizontalScrollView
+        android:id="@+id/items"
+        android:layout_width="wrap_content"
+        android:layout_height="275dp"
+        android:layout_marginTop="-100dp"
+        android:scrollbars="none"
+        android:contentDescription="Items"
+        app:layout_constraintTop_toBottomOf="@id/card_cover"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <LinearLayout
+            android:id="@+id/items_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
