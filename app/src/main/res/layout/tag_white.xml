@@ -6,14 +6,16 @@
 
     <TextView
         android:id="@+id/tag"
-        android:layout_width="150dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:gravity="center"
-        android:background="@drawable/places_location_border"
+        android:background="@drawable/border_full"
         android:text="Saint-Petersburg"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="#90000000"
+        android:textColor="@color/palette_black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

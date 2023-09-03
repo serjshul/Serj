@@ -24,7 +24,7 @@ class PlacesAdapter(private val data: ArrayList<PlacesModel>) : RecyclerView.Ada
         val title: TextView = itemView.findViewById(R.id.title)
         val location: TextView = itemView.findViewById(R.id.location)
         val cover: ImageView = itemView.findViewById(R.id.cover)
-        val description: TextView = itemView.findViewById(R.id.description)
+        val type: TextView = itemView.findViewById(R.id.type)
     }
 
     // OnClickListener Interface
@@ -34,7 +34,7 @@ class PlacesAdapter(private val data: ArrayList<PlacesModel>) : RecyclerView.Ada
 
     // Creates a new ViewHolder and initializes some private fields to be used by RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.places_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_places, parent, false)
 
         return ViewHolder(view)
     }
@@ -48,7 +48,7 @@ class PlacesAdapter(private val data: ArrayList<PlacesModel>) : RecyclerView.Ada
         holder.title.text = itemData.title
         holder.location.text = itemData.types[0]
         holder.cover.setImageResource(itemData.coverId)
-        holder.description.text = itemData.description
+        holder.type.text = itemData.types.joinToString(separator = ", ")
 
         // Setting the onClickListener
         holder.itemView.setOnClickListener {

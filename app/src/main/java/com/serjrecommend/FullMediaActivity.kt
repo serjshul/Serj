@@ -1,6 +1,7 @@
 package com.serjrecommend
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,6 +36,8 @@ class FullMediaActivity : AppCompatActivity() {
 
     // Some views that represent an media recommendation
     private lateinit var title: TextView
+    private lateinit var rating: TextView
+    private lateinit var production: TextView
     private lateinit var cover: ImageView
     private lateinit var description: TextView
     private lateinit var type: TextView
@@ -50,7 +53,7 @@ class FullMediaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.media_activity_full)
+        setContentView(R.layout.activity_full_media)
 
         // Getting the current Intent
         val intent = intent
@@ -66,6 +69,8 @@ class FullMediaActivity : AppCompatActivity() {
         mainLayout = findViewById(R.id.main_layout)
         tagLayout = findViewById(R.id.tags_layout)
         title = findViewById(R.id.title)
+        rating = findViewById(R.id.rating)
+        production = findViewById(R.id.production)
         cover = findViewById(R.id.cover)
         description = findViewById(R.id.description)
         tags = arrayListOf()
@@ -74,11 +79,20 @@ class FullMediaActivity : AppCompatActivity() {
         if (data != null) {
             // Setting the major data
             title.text = data.title
+            production.text = data.production
             cover.setImageResource(data.coverId)
             description.text = data.description
 
+            // Setting rating of the media and the color of the text
+            rating.text = data.rating.toString()
+            when {
+                data.rating >= 8.0 -> rating.setTextColor(Color.YELLOW)
+                data.rating >= 6.0 -> rating.setTextColor(Color.GREEN)
+                else -> rating.setTextColor(Color.RED)
+            }
+
             // Adding type of the recommendation to a tags_layout
-            type = setNewTag(R.layout.tag_white, 65, data.type)
+            type = setNewTag(R.layout.tag_white, 35, data.type)
             // Adding tags of the recommendation to a tags_layout
             for (tag in data.tags) {
                 tags.add(setNewTag(R.layout.tag_transparent, 30, tag))
@@ -112,7 +126,7 @@ class FullMediaActivity : AppCompatActivity() {
     // Creates new paragraph and adds to the main_layout
     private fun setNewParagraph(paragraph: MediaParagraphModel) {
         // Creating new view of the paragraph
-        val paragraphView: View = LayoutInflater.from(this).inflate(R.layout.media_paragraph, null)
+        val paragraphView: View = LayoutInflater.from(this).inflate(R.layout.paragraph_with_image, null)
 
         // Defining paragraph's TextView and setting the text
         val paragraphTitle = paragraphView.findViewById<TextView>(R.id.title)

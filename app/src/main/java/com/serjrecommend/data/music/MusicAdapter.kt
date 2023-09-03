@@ -1,5 +1,6 @@
 package com.serjrecommend.data.music
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ import com.serjrecommend.R
  * The adapter provides a binding from an music recommendation photos set to view (`CardView`) that
  * is displayed within a `RecyclerView` on to `MusicFragment`.
  */
-class MusicAdapter(private val data: ArrayList<MusicModel>): RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
+class MusicAdapter(private val data: ArrayList<MusicDataModel>): RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
 
 	// The onClickListener that defines onClick method
 	private var onClickListener: OnClickListener? = null
@@ -28,12 +29,12 @@ class MusicAdapter(private val data: ArrayList<MusicModel>): RecyclerView.Adapte
 
 	// onClickListener Interface
 	interface OnClickListener {
-		fun onClick(position: Int, model: MusicModel)
+		fun onClick(position: Int, model: MusicDataModel)
 	}
 
 	// Creates a new ViewHolder and initializes some private fields to be used by RecyclerView.
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-		val view = LayoutInflater.from(parent.context).inflate(R.layout.music_item, parent, false)
+		val view = LayoutInflater.from(parent.context).inflate(R.layout.item_music, parent, false)
 
 		return ViewHolder(view)
 	}
@@ -44,7 +45,8 @@ class MusicAdapter(private val data: ArrayList<MusicModel>): RecyclerView.Adapte
 		val itemData = data[position]
 
 		// Setting the data
-		holder.cover.setImageResource(itemData.coverId)
+		val coverBitmap = BitmapFactory.decodeFile(itemData.coverId!!.absolutePath)
+		holder.cover.setImageBitmap(coverBitmap)
 		holder.title.text = itemData.title
 		holder.musician.text = itemData.musician
 

@@ -1,5 +1,6 @@
 package com.serjrecommend.data.media
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,10 +23,10 @@ class MediaAdapter(private val data: ArrayList<MediaModel>): RecyclerView.Adapte
 
     // The view describes an item view and metadata about its media within the RecyclerView
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val title: TextView = itemView.findViewById(R.id.title)
-        val type: TextView = itemView.findViewById(R.id.type)
         val cover: ImageView = itemView.findViewById(R.id.cover)
-        val description: TextView = itemView.findViewById(R.id.description)
+        val title: TextView = itemView.findViewById(R.id.title)
+        val production: TextView = itemView.findViewById(R.id.production)
+        val rating: TextView = itemView.findViewById(R.id.rating)
     }
 
     // OnClickListener Interface
@@ -35,7 +36,7 @@ class MediaAdapter(private val data: ArrayList<MediaModel>): RecyclerView.Adapte
 
     // Creates a new ViewHolder and initializes some private fields to be used by RecyclerView
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.media_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_media, parent, false)
 
         return ViewHolder(view)
     }
@@ -46,10 +47,15 @@ class MediaAdapter(private val data: ArrayList<MediaModel>): RecyclerView.Adapte
         val itemData = data[position]
 
         // Setting the data
-        holder.title.text = itemData.title
         holder.cover.setImageResource(itemData.coverId)
-        holder.description.text = itemData.description
-        holder.type.text = itemData.type
+        holder.title.text = itemData.title
+        holder.production.text = itemData.production
+        holder.rating.text = itemData.rating.toString()
+        when {
+            itemData.rating >= 8.0 -> holder.rating.setTextColor(holder.itemView.resources.getColor(R.color.rating_yellow))
+            itemData.rating >= 6.0 -> holder.rating.setTextColor(holder.itemView.resources.getColor(R.color.rating_green))
+            else -> holder.rating.setTextColor(holder.itemView.resources.getColor(R.color.rating_red))
+        }
 
         // Setting the onClickListener
         holder.itemView.setOnClickListener {

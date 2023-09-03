@@ -35,19 +35,19 @@
     <string name="full_music_transparent_image">Transparent image</string>
     <string name="full_music_tags">Tags</string>
     <!-- Full Media Activity -->
-    <string name="full_media_back_button">Back button</string>
-    <string name="full_media_tags">Tags</string>
-    <string name="full_media_title">Media title</string>
-    <string name="full_media_cover">Media cover</string>
-    <string name="full_media_description">media description / media description \nmedia description / media description \nmedia description / media description \nmedia description / media description</string>
+    <string name="full_media_back_button">Кнопка "Назад"</string>
+    <string name="full_media_tags">Тэги</string>
+    <string name="full_media_title">Название медиа</string>
+    <string name="full_media_cover">Обложка медиа</string>
+    <string name="full_media_description">описание медиа / описание медиа \nописание медиа / описание медиа \nописание медиа / описание медиа \nописание медиа / описание медиа</string>
     <!-- Full Places Activity -->
     <string name="full_place_back_button">Back button</string>
-    <string name="full_place_title">Place title</string>
-    <string name="full_place_description">place description / place description \nplace description / place description</string>
+    <string name="full_place_title">Название места</string>
+    <string name="full_place_description">описание места / описание места \nописание места / описание места</string>
     <string name="full_places_tags">Tags</string>
-    <string name="full_places_address">Address</string>
-    <string name="full_places_metro">Metro</string>
-    <string name="full_places_social_media">Social media</string>
+    <string name="full_places_address">Адрес</string>
+    <string name="full_places_metro">Станция метро</string>
+    <string name="full_places_social_media">Инстаграм</string>
 
     <!-- FRAGMENTS -->
     <string name="fragment_music_header">Some music recommendations</string>
@@ -62,9 +62,14 @@
     <string name="paragraph_media_cover">Paragraph cover</string>
     <string name="paragraph_media_text">media paragraph / media paragraph \nmedia paragraph / media paragraph \n\nmedia paragraph / media paragraph \nmedia paragraph / media paragraph\n</string>
     <string name="paragraph_places_title">Places paragraph</string>
-    <string name="paragraph_places_text">places paragraph / places paragraph \nplaces paragraph / places paragraph \n\nplaces paragraph / places paragraph \nplaces paragraph / places paragraph\n</string>
+    <string name="paragraph_places_text">places paragraph / places paragraph \nplaces paragraph / places paragraph \n\nplaces paragraph / places paragraph \nplaces paragraph / places paragraph</string>
 
     <!-- OTHERS -->
     <string name="carousel_item_image">Image of carousel</string>
+    <string name="menu_search">Поиск</string>
+    <string name="menu_main">Главное</string>
+    <string name="menu_favourites">Избранное</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

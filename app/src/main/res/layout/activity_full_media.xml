@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullMediaActivity" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:id="@+id/cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/media_cover_ahs_cult"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/background_transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@color/gray_music"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/full_music_transparent_image" />
+
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/arrow_back_white"
+                    android:background="@null"
+                    android:contentDescription="@string/full_music_back_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageButton
+                    android:id="@+id/like_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/heart_white"
+                    android:background="@null"
+                    android:contentDescription="@string/full_music_back_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.0"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/palette_white"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:src="@color/transparent"/>
+
+                    <TextView
+                        android:id="@+id/production"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Производство"
+                        android:textSize="17sp"
+                        android:textColor="@color/palette_white"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="@string/full_media_title"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/palette_white"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/info"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <HorizontalScrollView
+                    android:id="@+id/tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/full_music_tags"
+                    android:scrollbars="none"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/tags_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal" />
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:paddingBottom="35dp"
+                    android:text="@string/full_media_description"
+                    android:textSize="15sp"
+                    android:textColor="@color/palette_black"
+                    android:lineSpacingExtra="4sp"
+                    app:layout_constraintTop_toBottomOf="@id/tags"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

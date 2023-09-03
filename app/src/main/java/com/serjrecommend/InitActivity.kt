@@ -22,7 +22,7 @@ class InitActivity : AppCompatActivity() {
         // Button that opens the Feed Activity
         buttonEnter = findViewById(R.id.buttonEnter)
         buttonEnter.setOnClickListener {
-            val intent = Intent(this, FeedActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
