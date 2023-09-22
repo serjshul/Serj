@@ -82,64 +82,6 @@ object MediaData {
                 )
             )
         )
-        data.add(
-            MediaModel(
-                "Очень странные дела: 4 сезон",
-                "Сериал",
-                "Netflix and chill",
-                1000.0,
-                "Netflix",
-                arrayListOf("Триллер", "Начная фантастика"),
-                R.drawable.banner_stranger_things_4,
-                "Описание медиа / Описание медиа\nОписание медиа / Описание медиа\nОписание медиа / Описание медиа\nОписание медиа / Описание медиа",
-                arrayListOf(
-                    MediaParagraphModel(
-                        "",
-                        R.drawable.banner_stranger_things_4,
-                        ""
-                    )
-                )
-            )
-        )
-        data.add(
-            MediaModel(
-                "Heartstopper",
-                "Сериал",
-                "Netflix and chill",
-                8.6,
-                "Netflix",
-                arrayListOf("Драма", "Романтика"),
-                R.drawable.media_cover_heartstopper,
-                "Cериал и графический роман, в котором Чарли и Ник обнаруживают, что их дружба может оказаться чем-то большим. Сплошная ваниль и романтика — это нам надо!",
-                arrayListOf(
-                    MediaParagraphModel(
-                        "Coming-of-age story",
-                        R.drawable.media_paragraph_heartstopper_1,
-                        "<p>тра-та-та</p>"
-                    ),
-                    MediaParagraphModel(
-                        "Queer community",
-                        R.drawable.media_paragraph_heartstopper_2,
-                        "<p>тра-та-та</p>"
-                    ),
-                    MediaParagraphModel(
-                        "Ванилька гей-мира",
-                        R.drawable.media_paragraph_heartstopper_3,
-                        "<p>тра-та-та</p>"
-                    ),
-                    MediaParagraphModel(
-                        "Репрезентация бисексуальности",
-                        R.drawable.media_paragraph_heartstopper_4,
-                        "<p>тра-та-та</p>"
-                    ),
-                    MediaParagraphModel(
-                        "Графический роман",
-                        R.drawable.media_paragraph_heartstopper_5,
-                        "<p>тра-та-та</p>"
-                    )
-                )
-            )
-        )
 
         return data as ArrayList<Any>
     }

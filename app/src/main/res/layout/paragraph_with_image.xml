@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/media_paragraph_heartstopper_3"
+            android:src="@drawable/media_paragraph_ahs_cult_2"
             android:contentDescription="@string/paragraph_media_cover" />
 
     </androidx.cardview.widget.CardView>
